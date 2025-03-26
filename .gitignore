@@ -1,0 +1,54 @@
+# Visual Studio files
+.vscode/
+.vs/
+*.code-workspace
+*.sln
+*.vcxproj*
+*.VC.db
+*.VC.opendb
+
+# Ignore build directories outside Dependencies
+Build/
+Debug/
+x64/
+Release/
+!Dependencies/**/x64/
+!Dependencies/**/Release/
+
+# Ignore object files and compiler-generated files
+*.obj
+*.ilk
+*.pdb
+*.ipch
+*.tlog
+*.log
+*.aps
+*.ncb
+*.suo
+*.user
+*.opendb
+*.vcxproj.user
+
+# Ignore binaries and libraries
+*.exe
+*.dll
+*.lib
+*.exp
+*.iobj
+*.ipdb
+
+# Ignore logs and temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# Ignore compiled shaders or intermediates
+*.spv
+*.glslbin
+*.glslbin.*
+
+# Keep Dependencies folder fully intact
+!Dependencies/
