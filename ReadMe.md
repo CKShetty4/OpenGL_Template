@@ -27,55 +27,75 @@ OpenGLProject/
 ```
 
 ## Setup Instructions
+
+Follow these steps to configure project properties for OpenGLProject in **Microsoft Visual Studio**:  
+
 ### 1. Open the Project
-- Open `OpenGLProject.sln` in Visual Studio.
 
-### 2. Configure Project Properties
-#### **C/C++ General**
-- **Additional Include Directories:**
-  ```
-  $(SolutionDir)Dependencies\GLFW\include;
-  $(SolutionDir)Dependencies\GLAD;
-  $(SolutionDir)Dependencies\GLEW\include\GL;
-  %(AdditionalIncludeDirectories)
-  ```
-- **Screenshot:**
-  ![Project Properties - General](screenshots/img1.png)
+1. Open Visual Studio and load `OpenGLProject.sln`.  
+2. Navigate to **View** > **Solution Explorer**.  
+3. Right-click on **OpenGLProject** in the Solution Explorer.  
+4. Click **Properties**.  
 
-#### **Preprocessor Definitions**
-- **Add:** `GLEW_STATIC;` *(Ensure other required definitions are present.)*
-- **Screenshot:**
-  ![Project Properties - Preprocessor](screenshots/img2.png)
+### **2. Configure General Settings**  
+1. In the **OpenGLProject Property Pages**, select the **Configuration** and **Platform** options as required.  
+2. Expand the **C/C++** section in the left panel and click **General**.  
+3. Set **Additional Include Directories** to:  
+   ```
+   $(SolutionDir)Dependencies\GLFW\include;
+   $(SolutionDir)Dependencies\GLAD;
+   $(SolutionDir)Dependencies\GLEW\include\GL;
+   %(AdditionalIncludeDirectories)
+   ```  
+ - **Screenshot:**
+ ![Project Properties - General](screenshots/img1.png)
 
-#### **Linker General**
-- **Additional Library Directories:**
-  ```
-  $(SolutionDir)Dependencies\GLEW\lib\Release\x64;
-  $(SolutionDir)Dependencies\GLFW\lib-vc2022;
-  %(AdditionalLibraryDirectories)
-  ```
-- **Screenshot:**
-  ![Project Properties - Linker General](screenshots/img3.png)
+### **3. Define Preprocessor Settings**  
+1. Navigate to **C/C++ > Preprocessor**.  
+2. Add the following to **Preprocessor Definitions**:  
+   ```
+   GLEW_STATIC; *(Ensure other required definitions are present.)*
+   ``` 
+ - **Screenshot:**
+ ![Project Properties - Preprocessor](screenshots/img2.png) 
 
-#### **Linker Input**
-- **Additional Dependencies:**
-  ```
-  $(CoreLibraryDependencies);
-  %(AdditionalDependencies);
-  glfw3.lib;
-  opengl32.lib;
-  glew32s.lib;
-  ```
-- **Ignore Specific Default Libraries:** `MSVCRT.lib`
-- **Screenshot:**
-  ![Project Properties - Linker Input](screenshots/img4.png)
+### **4. Configure Linker Settings**  
+1. Expand the **Linker** section and click **General**.  
+2. Set **Additional Library Directories** to:  
+   ```
+   $(SolutionDir)Dependencies\GLEW\lib\Release\x64;
+   $(SolutionDir)Dependencies\GLFW\lib-vc2022;
+   %(AdditionalLibraryDirectories)
+   ```  
+ - **Screenshot:**
+ ![Project Properties - Linker General](screenshots/img3.png)
 
-## Compilation & Execution
-- **Compile:** `Ctrl + F7`
-- **Build:** `Ctrl + Shift + B`
-- **Run:** `F5`
+1. Click **Input** under Linker and set **Additional Dependencies**:  
+   ```
+   $(CoreLibraryDependencies);
+   %(AdditionalDependencies);
+   glfw3.lib;
+   opengl32.lib;
+   glew32s.lib;
+   ```  
+2. In the same section, set **Ignore Specific Default Libraries** to:  
+   ```
+   MSVCRT.lib
+   ```  
+ - **Screenshot:**
+ ![Project Properties - Linker Input](screenshots/img4.png)
+
+
+### **5. Open and Build the Project**  
+1. Navigate to **Source Files** in **Solution Explorer**.  
+2. Open `main.cpp`.  
+3. Use the following shortcuts to compile and build:  
+   - **Ctrl + Shift + B** → Build the project.  
+   - **Ctrl + F7** → Compile the project without running.  
 
 *(These shortcuts apply to Windows; for other platforms, refer to respective IDE settings.)*
+
+Once completed, the OpenGLProject should be successfully configured and ready for execution.  
 
 ## Features
 - Uses **GLFW** for window and input handling.
