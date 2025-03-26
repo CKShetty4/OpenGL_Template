@@ -30,7 +30,6 @@ Release/
 # Ignore binaries and libraries
 *.exe
 *.dll
-*.lib
 *.exp
 *.iobj
 *.ipdb
