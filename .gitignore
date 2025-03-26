@@ -2,8 +2,6 @@
 .vscode/
 .vs/
 *.code-workspace
-*.sln
-*.vcxproj*
 *.VC.db
 *.VC.opendb
 
